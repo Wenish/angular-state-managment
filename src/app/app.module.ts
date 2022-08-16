@@ -12,6 +12,7 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { TrainsState } from './store/trains.store';
 import { environment } from 'src/environments/environment';
+import { TrainstationsState } from './store/trainstations.store';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { environment } from 'src/environments/environment';
   ],
   imports: [
     BrowserModule,
-    NgxsModule.forRoot([TrainsState], {
+    NgxsModule.forRoot([TrainsState, TrainstationsState], {
       developmentMode: !environment.production
     }),
     NgxsReduxDevtoolsPluginModule.forRoot(),

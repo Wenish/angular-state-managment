@@ -1,5 +1,5 @@
 <p>page-trainstations works!</p>
 
-<app-list></app-list>
+<app-list [list]="(trainstations$ | async) || []"></app-list>
 
 <a [routerLink]="['/']">back home</a>

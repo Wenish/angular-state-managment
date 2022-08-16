@@ -1,5 +1,5 @@
 <p>page-trains works!</p>
 
-<app-list [list]="(trains$ | async) || []"></app-list>
+<app-list [list]="(trains$ | async) || []" (deleteItem)="onDeleteItem($event)"></app-list>
 
 <a [routerLink]="['/']">back home</a>

@@ -9,6 +9,7 @@ import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { TrainsState } from './store/trains.store';
 import { environment } from 'src/environments/environment';
 
@@ -26,6 +27,7 @@ import { environment } from 'src/environments/environment';
     NgxsModule.forRoot([TrainsState], {
       developmentMode: !environment.production
     }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],

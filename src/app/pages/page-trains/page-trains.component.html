@@ -1,7 +1,5 @@
 <p>page-trains works!</p>
 
-<app-list></app-list>
-
-<div>{{ trains$ | json }}</div>
+<app-list [list]="(trains$ | async) || []"></app-list>
 
 <a [routerLink]="['/']">back home</a>

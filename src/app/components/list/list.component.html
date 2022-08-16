@@ -1,2 +1,2 @@
 <p>list works!</p>
-<app-list-item></app-list-item>
+<app-list-item *ngFor="let item of list" [id]="item" (delete)="onDeleteItem($event)"></app-list-item>

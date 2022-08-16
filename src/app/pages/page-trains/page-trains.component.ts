@@ -10,11 +10,12 @@ import { TrainsState } from 'src/app/store/trains.store';
 })
 export class PageTrainsComponent implements OnInit {
 
-  @Select(TrainsState) trains$!: Observable<string[]>;
+  @Select(TrainsState.trainsEndsWithNumberThree) trains$!: Observable<string[]>;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.trains$.forEach(value => console.log(value)))
   }
 
 }

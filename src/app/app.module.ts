@@ -8,6 +8,9 @@ import { PageTrainstationsComponent } from './pages/page-trainstations/page-trai
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
+import { NgxsModule } from '@ngxs/store';
+import { TrainsState } from './store/trains.store';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { ListItemComponent } from './components/list-item/list-item.component';
   ],
   imports: [
     BrowserModule,
+    NgxsModule.forRoot([TrainsState], {
+      developmentMode: !environment.production
+    }),
     AppRoutingModule
   ],
   providers: [],

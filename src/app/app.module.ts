@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { PageTrainsComponent } from './pages/page-trains/page-trains.component';
 import { PageTrainstationsComponent } from './pages/page-trainstations/page-trainstations.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
+import { ListComponent } from './components/list/list.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageTrainsComponent,
     PageTrainstationsComponent,
-    PageHomeComponent
+    PageHomeComponent,
+    ListComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,

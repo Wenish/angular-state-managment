@@ -10,7 +10,7 @@ import { DeleteTrain, LoadTrains, TrainsState } from 'src/app/store/trains.store
 })
 export class PageTrainsComponent implements OnInit {
 
-  @Select(TrainsState) trains$!: Observable<string[]>;
+  @Select(TrainsState.trainsEndsWithNumberThree) trains$!: Observable<string[]>;
 
   constructor(private store: Store) { }
 

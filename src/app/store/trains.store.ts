@@ -10,10 +10,6 @@ export class LoadTrains {
     static readonly type = '[Trains] LoadTrains'
 }
 
-export interface TrainsStateModel {
-    list: []
-}
-
 @State<string[]>({
   name: TrainsState.name,
   defaults: ['909', '234', '34543']
@@ -24,14 +20,18 @@ export class TrainsState {
     constructor() {}
 
     @Action(DeleteTrain)
-    async deleteTrain(ctx: StateContext<TrainsState>, action: DeleteTrain) {
-        console.log(action.id)
-        // const response = await this.apiclient.trains.delete(action.id)
+    async deleteTrain(ctx: StateContext<string[]>, action: DeleteTrain) {
+        console.log(action)
+        // call api to delete train
+        const newState = ctx.getState().filter((value) => value != action.id)
+        console.log(newState)
+        ctx.setState(newState)
     }
 
     @Action(LoadTrains)
-    loadTrains(ctx: StateContext<TrainsState>) {
-        console.log(ctx.getState())
+    loadTrains(ctx: StateContext<string[]>) {
+        // call api to get trains
+        ctx.setState(['23', '13', '14', '153', '16'])
     }
 
     

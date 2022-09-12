@@ -1,0 +1,5 @@
+<p>form works!</p>
+<form [formGroup]="formData" ngxsForm="form.formData" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" />
+    <button type="submit">Create</button>
+</form>

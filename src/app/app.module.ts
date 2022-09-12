@@ -13,6 +13,10 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { TrainsState } from './store/trains.store';
 import { environment } from 'src/environments/environment';
 import { TrainstationsState } from './store/trainstations.store';
+import { NgxsFormPluginModule } from '@ngxs/form-plugin';
+import { FormComponent } from './components/form/form.component';
+import { FormState } from './store/form.store';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,13 +25,17 @@ import { TrainstationsState } from './store/trainstations.store';
     PageTrainstationsComponent,
     PageHomeComponent,
     ListComponent,
-    ListItemComponent
+    ListItemComponent,
+    FormComponent,
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
-    NgxsModule.forRoot([TrainsState, TrainstationsState], {
+    NgxsModule.forRoot([TrainsState, TrainstationsState, FormState], {
       developmentMode: !environment.production
     }),
+    NgxsFormPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     AppRoutingModule
   ],
